@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PlayingWithAnimations"
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" 
+             x:Class="PlayingWithAnimations.MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <forms:AnimationView 
+             Grid.Row="0"
+             x:Name="animationView" 
+             Animation="star.json"
+             IsPlaying="false"
+             Loop="false"
+             VerticalOptions="FillAndExpand" 
+             OnClick="Clicked"
+             OnFinish="Finished"
+             HorizontalOptions="FillAndExpand" />
+        <Label 
+           Grid.Row="1"
+           x:Name="status"
+           Text = "OFF"
+           FontSize="100"
+           VerticalOptions="CenterAndExpand"
+           HorizontalOptions="CenterAndExpand">
+        </Label>
+    </Grid>
+
+</ContentPage>
